@@ -1,0 +1,26 @@
+name: Test reset Neon branch
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reset-test-branch:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Reset Neon test branch
+        uses: neondatabase/reset-branch-action@v1
+        id: reset-branch
+        with:
+          project_id: still-tooth-45133513
+          branch: br-square-waterfall-adi6mpne
+          parent: true
+          api_key: ${{ secrets.NEON_API_KEY }}
+
+      - name: Show connection string
+        run: |
+          echo "PSQL connection URL: ${{ steps.reset-branch.outputs.psql_conn }}"
+          echo "Direct conn string:  ${{ steps.reset-branch.outputs.connection_uri }}"
