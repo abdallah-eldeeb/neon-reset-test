@@ -23,5 +23,9 @@ jobs:
           
       - name: Show connection string
         run: |
-          echo "PSQL connection URL: ${{ steps.reset-branch.outputs.psql_conn }}"
-          echo "Direct conn string:  ${{ steps.reset-branch.outputs.connection_uri }}"
+          echo "Branch ID:             ${{ steps.reset-branch.outputs.branch_id }}"
+          echo "DB URL:                ${{ steps.reset-branch.outputs.db_url }}"
+          echo "DB URL with pooler:    ${{ steps.reset-branch.outputs.db_url_with_pooler }}"
+          echo "Host:                  ${{ steps.reset-branch.outputs.host }}"
+          echo "Host with pooler:      ${{ steps.reset-branch.outputs.host_with_pooler }}"
+          echo "Password:              ${{ steps.reset-branch.outputs.password }}"
