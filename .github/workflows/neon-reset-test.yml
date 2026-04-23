@@ -19,7 +19,7 @@ jobs:
           branch: br-square-waterfall-adi6mpne
           parent: true
           api_key: ${{ secrets.NEON_API_KEY }}
-          cs_role_name: admin_api_user
+          cs_role_name: neondb_owner
           
       - name: Show connection string
         run: |
