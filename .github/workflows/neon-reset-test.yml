@@ -16,10 +16,10 @@ jobs:
         id: reset-branch
         with:
           project_id: still-tooth-45133513
-          branch: br-square-waterfall-adi6mpne
+          branch: br-orange-night-adc3ve89
           parent: true
           api_key: ${{ secrets.NEON_API_KEY }}
-          cs_role_name: neondb_owner
+          cs_role_name: admin_api_user
           
       - name: Show connection string
         run: |
